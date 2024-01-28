@@ -27,7 +27,8 @@ export const payment = async (req, res) => {
       signature: razorpay_signature
     });
     await payment.save();
-    res.redirect(`http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`);
+    // res.redirect(`http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`);
+    res.redirect(`https://razor-pay-gateway.vercel.app/paymentsuccess?reference=${razorpay_payment_id}`);
   } else {
     res.status(503).json({ success: false, message: 'invalid razorpay signature' });
   }
