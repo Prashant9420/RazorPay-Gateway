@@ -4,8 +4,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import axios from "axios";
 const Card = ({ imgUrl, name, price }) => {
     const handlePayment = async() => {
-        const {data:{key}} = await axios.get("http://localhost:8080/api/getKey");
-        const {data:{order}} = await axios.post("http://localhost:8080/api/checkout",{
+        const {data:{key}} = await axios.get("https://razor-pay-server.onrender.com/api/getKey");
+        const {data:{order}} = await axios.post("https://razor-pay-server.onrender.com/api/checkout",{
             price
         }); 
         const options = {
@@ -16,7 +16,7 @@ const Card = ({ imgUrl, name, price }) => {
           "description": "Test Transaction",
           "image": "https://media.licdn.com/dms/image/D4D03AQH7dAWYJyLVpg/profile-displayphoto-shrink_800_800/0/1678025618489?e=1711584000&v=beta&t=433bUPG0rmUZu0F1aJWuLQ7_sQBAxJxGwvTzWPoIDkM",
           "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-          "callback_url": "http://localhost:8080/api/payment",
+          "callback_url": "https://razor-pay-server.onrender.com/api/payment",
           "prefill": {
               "name": "Prashant Pal",
               "email": "prashantpal2468@gmail.com",
