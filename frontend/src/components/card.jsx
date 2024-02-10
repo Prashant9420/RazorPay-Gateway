@@ -34,7 +34,7 @@ const Card = ({ imgUrl, name, price }) => {
         address: "Razorpay Corporate Office",
       },
       theme: {
-        color: "#3399cc",
+        color: "#000000",
       },
     };
 
